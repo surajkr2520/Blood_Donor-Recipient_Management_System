@@ -1,0 +1,191 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Donor</title>
+    <link rel="stylesheet" href="/css/styles.css">
+</head>
+<body>
+    <h2>Donor Information</h2>
+    <form action="/donors" method="post">
+        <div>
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" required>
+        </div>
+        <div>
+            <label for="bloodType">Blood Type:</label>
+            <select id="bloodType" name="bloodType" required>
+                <option value="">Please select...</option>
+                <option value="A+">A+</option>
+                <option value="A-">A-</option>
+                <option value="B+">B+</option>
+                <option value="B-">B-</option>
+                <option value="AB+">AB+</option>
+                <option value="AB-">AB-</option>
+                <option value="O+">O+</option>
+                <option value="O-">O-</option>
+            </select>
+        </div>
+        <div>
+            <label for="location">Location:</label>
+            <input type="text" id="location" name="location" required>
+        </div>
+        <div>
+            <label for="contactInfo">Contact Info:</label>
+            <input type="text" id="contactInfo" name="contactInfo" required>
+        </div>
+        <button type="submit">Add Donor</button>
+    </form>
+    <a href="/" class="button">Back to Home</a>
+</body>
+</html>
+
+
+
+<!--!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blood Donor List</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <h1>Welcome to <br>Blood Donor & Recipient <br>Management System</h1>
+    <div class="form-container">
+        <h2>Donor Information</h2>
+        <form action="/donors" method="post">
+            <div>
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" required>
+            </div>
+            <div>
+                <label for="location">Location:</label>
+                <input type="text" id="location" name="location" required>
+            </div>
+            <div>
+                <label for="contactInfo">Contact Info:</label>
+                <input type="text" id="contactInfo" name="contactInfo" required>
+            </div>
+            <div class="form-group">
+                <label for="bloodType">Blood Type</label>
+                <select id="bloodType" name="bloodType" required>
+                    <option value="">Please select...</option>
+                    <option value="A+">A+</option>
+                    <option value="A-">A-</option>
+                    <option value="B+">B+</option>
+                    <option value="B-">B-</option>
+                    <option value="AB+">AB+</option>
+                    <option value="AB-">AB-</option>
+                    <option value="O+">O+</option>
+                    <option value="O-">O-</option>
+                </select>
+            </div>
+            <br>
+            <button type="submit">Add Donor</button>
+        </form>
+    </div>
+</body>
+</html>
+-->
+
+
+<!--
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blood Donor List</title>
+    <link rel="stylesheet" href="css/styles.css">
+	
+</head>
+<body>
+	<h1>Welcome to <br>Blood Donor & Recipient <br>Management System</h1>
+	<div class="form-container">
+	        <h2>Donor Information</h2>
+	        <form action="/donors" method="post">
+	            <div>
+	                <label for="name">Name:</label>
+	                <input type="text" id="name" name="name" required>
+	            </div>
+	       
+				
+	            <div>
+	                <label for="location">Location:</label>
+	                <input type="text" id="location" name="location" required>
+	            </div>
+	            <div>
+	                <label for="contactInfo">Contact Info:</label>
+	                <input type="text" id="contactInfo" name="contactInfo" required>
+	            </div>
+				<div class="form-group">
+				    <label for="bloodType">Blood Type</label>
+			        <select id="bloodType" name="bloodType" required>
+						    <option value="">Please select...</option>
+					        <option value="A+">A+</option>
+						    <option value="A-">A-</option>
+						    <option value="B+">B+</option>
+						    <option value="B-">B-</option>
+						    <option value="AB+">AB+</option>
+						    <option value="AB-">AB-</option>
+						    <option value="O+">O+</option>
+						    <option value="O-">O-</option>
+					</select>
+				</div>
+				<br>
+	            <button type="submit">Add Donor</button>
+	        </form>
+	    </div>
+		-->
+		
+		
+		
+	<!--
+    <h1>Blood Donor Registration</h1>
+
+     Form for Adding a New Donor
+    <form action="/donors" method="post">
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" required>
+		<br><br>
+        <label for="bloodType">Blood Type:</label>
+        <input type="text" id="bloodType" name="bloodType" required>
+		<br><br>
+		<label for="location">Location:</label>
+		<input type="text" id="location" name="location" required>
+		<br><br>
+        <label for="contactInfo">Contact Info:</label>
+        <input type="text" id="contactInfo" name="contactInfo" required>
+		<br><br>
+        <button type="submit">Add Donor</button>
+    </form>
+
+    <h2>Registered Donors</h2>
+    <table border="1">
+        <tr>
+            <th>Name</th>
+            <th>Blood Type</th>
+			<th>Location</th>
+            <th>Contact Info</th>
+            <th>Actions</th>
+        </tr>
+         Use Thymeleaf to iterate over the donors list and display each donor 
+        <tr th:each="donor : ${donors}">
+            <td th:text="${donor.name}">Name</td>
+            <td th:text="${donor.bloodType}">Blood Type</td>
+			<td th:text="${donor.location}">Location</td>
+            <td th:text="${donor.contactInfo}">Contact Info</td>
+            <td>
+                 Delete Button
+                <form action="/donors/delete/{id}" method="post" th:action="@{/donors/delete/{id}(id=${donor.id})}">
+                    <button type="submit">Delete</button>
+                </form>
+            </td>
+        </tr>
+    </table>
+	
+</body>
+</html> -->

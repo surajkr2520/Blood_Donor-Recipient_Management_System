@@ -1,0 +1,180 @@
+
+
+/* Global Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    background: url('/images/IMG_6569.jpg') no-repeat center center fixed; /* Path to your image */
+    background-size: cover; /* Ensures the image covers the entire page */
+    color: #333; /* Maintains text visibility */
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+}
+
+h1, h2 {
+	text-align: center;
+    color: #f4f4f4;
+    margin-bottom: 20px;
+}
+
+/* Form Styles */
+form {
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    max-width: 400px;
+    width: 100%;
+    margin: 20px 0;
+}
+
+form div {
+    margin-bottom: 15px;
+}
+
+label {
+    font-weight: bold;
+    display: block;
+    margin-bottom: 5px;
+    color: #333;
+}
+
+input[type="text"],
+select {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 16px;
+}
+
+button[type="submit"] {
+    width: 100%;
+    padding: 10px;
+    border: none;
+    background-color: #4a90e2;
+    color: #ffffff;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    border-radius: 4px;
+    transition: background-color 0.3s;
+}
+
+button[type="submit"]:hover {
+    background-color: #357ABD;
+}
+
+/* Table Styles */
+table {
+    width: 100%;
+    max-width: 600px;
+    margin: 20px auto;
+    border-collapse: collapse;
+    background-color: #ffffff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+table thead {
+    background-color: #4a90e2;
+    color: #ffffff;
+}
+
+table th, table td {
+    padding: 12px 15px;
+    text-align: left;
+}
+
+table tbody tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+/* Button Styles */
+.button-container {
+    display: flex;
+    gap: 50px;
+    margin-top: 100px;
+    justify-content: center; /* Centers the buttons horizontally */
+}
+
+.button-container .button {
+    display: inline-block;
+    width: 200px; /* Explicit width for consistency */
+    height: 60px; /* Explicit height for identical size */
+    text-align: center;
+    line-height: 60px; /* Aligns text vertically in the button */
+    font-size: 18px; /* Uniform font size */
+    font-weight: bold;
+    text-decoration: none;
+    border-radius: 10px; /* Rounded corners for all buttons */
+    transition: transform 0.2s, background-color 0.3s; /* Smooth hover effect */
+}
+
+/* Green Button */
+.button-container .button.green {
+    background-color: #27ae60;
+    color: white;
+}
+
+.button-container .button.green:hover {
+    background-color: #1e8449;
+    transform: scale(1.05); /* Slight zoom on hover */
+}
+
+/* Red Button */
+.button-container .button.red {
+    background-color: #008080;
+    color: white;
+}
+
+.button-container .button.red:hover {
+	background-color: #006666; /* Darker teal for hover */
+	    color: #ffffff; /* Keep white text for contrast */
+	    border-color: #004c4c; /* Even darker teal for the border on hover */
+    transform: scale(1.05); /* Slight zoom on hover */
+}
+
+/* Back to Home Button */
+a.button {
+    display: inline-block;
+    width: 200px; /* Matches the width of other buttons */
+    height: 60px; /* Matches the height of other buttons */
+    line-height: 60px;
+    text-align: center;
+    color: #ffffff;
+    background-color: #4a90e2;
+    border-radius: 10px;
+    text-decoration: none;
+    font-weight: bold;
+    margin-top: 20px; /* Spacing from other elements */
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+a.button:hover {
+    background-color: #357ABD;
+    transform: scale(1.05); /* Slight zoom on hover */
+}
+
+/* Responsive Design */
+@media (max-width: 600px) {
+    .button-container {
+        flex-direction: column; /* Stack buttons vertically on small screens */
+        gap: 20px;
+    }
+
+    .button-container .button,
+    a.button {
+        width: 100%; /* Full width for smaller screens */
+    }
+}

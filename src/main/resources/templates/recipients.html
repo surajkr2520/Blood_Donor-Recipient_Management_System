@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recipient</title>
+    <link rel="stylesheet" href="/css/styles.css">
+</head>
+<body>
+    <h2>Available Donors</h2>
+    
+    <!-- Search Form -->
+    <form action="/recipients" method="get">
+        <label for="searchBy">Search by:</label>
+        <select id="searchBy" name="searchBy">
+            <option value="">Select...</option>
+            <option value="bloodType">Blood Type</option>
+            <option value="location">Location</option>
+        </select>
+        <input type="text" name="query" placeholder="Search Donor">
+        <button type="submit">Search</button>
+    </form>
+
+    <!-- Data Table -->
+    <table>
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Blood Type</th>
+                <th>Location</th>
+                <th>Contact Info</th>
+            </tr>
+        </thead>
+        <tbody>
+            <!-- Use Thymeleaf to iterate over recipients and display in table rows -->
+            <tr th:each="recipient : ${recipients}">
+                <td th:text="${recipient.name}"></td>
+                <td th:text="${recipient.bloodType}"></td>
+                <td th:text="${recipient.location}"></td>
+                <td th:text="${recipient.contactInfo}"></td>
+            </tr>
+        </tbody>
+    </table>
+
+    <!-- Back Button -->
+    <a href="/" class="button">Back to Home</a>
+</body>
+</html>
+
+
+<!--!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recipients</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <h1>Recipient List</h1>
+    <form method="get" action="/recipients">
+        <input type="text" name="query" placeholder="Search...">
+        <select name="searchBy">
+            <option value="bloodType">Blood Type</option>
+            <option value="location">Location</option>
+        </select>
+        <button type="submit">Search</button>
+    </form>
+    <table border="1">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Blood Type</th>
+                <th>Location</th>
+                <th>Contact Info</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr th:each="recipient : ${recipients}">
+                <td th:text="${recipient.name}"></td>
+                <td th:text="${recipient.bloodType}"></td>
+                <td th:text="${recipient.location}"></td>
+                <td th:text="${recipient.contactInfo}"></td>
+            </tr>
+        </tbody>
+    </table>
+    <button onclick="window.location.href='/'">Back</button>
+</body>
+</html>
+-->
